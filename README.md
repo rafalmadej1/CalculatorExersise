@@ -70,6 +70,31 @@ Exiting the calculator. Goodbye!
 
 ## Testing & Code Quality
 
+Pre-commit Hook
+    
+This repository uses [`pre-commit`](https://pre-commit.com/) (configured in `.pre-commit-config.yaml`) to run `pylint`
+automatically before each commit and enforce a minimum score of `8.0` (`--fail-under=8.0`).
+
+Install and enable the hook locally:
+
+```bash
+pip install pre-commit
+pre-commit install
+You can also run it manually on all files:
+pre-commit run --all-files
+```
+
+```yaml
+repos:
+  - repo: https://github.com/pycqa/pylint
+    rev: v3.3.8
+    hooks:
+      - id: pylint
+        args:
+          - --fail-under=8.0
+````
+
+
 Run the test suite with `pytest`:
 
 ```bash
