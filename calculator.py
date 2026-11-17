@@ -95,7 +95,7 @@ def main():
                         print("Exiting the calculator. Goodbye!")
                         break
 
-    except EOFError, KeyboardInterrupt:  # Handle Ctrl+D (EOF) and Ctrl+C
+    except (EOFError, KeyboardInterrupt):  # Handle Ctrl+D (EOF) and Ctrl+C
         print("\nExiting the calculator. Goodbye!")
 
 
