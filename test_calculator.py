@@ -102,6 +102,19 @@ class TestCalculator:
         calc = Calculator(-6, -2)
         assert calc.divide() == 3
 
+    @pytest.mark.parametrize(
+        "a, b, expected",
+        [
+            (2, 3, 5),
+            (-1, -2, -3),
+            (2.5, 3.5, 6.0),
+        ],
+    )
+    def test_add_parametrized(self, a, b, expected):
+        """Verify addition with parametrized integer and float inputs."""
+        calc = Calculator(a, b)
+        assert calc.sum() == expected
+
 
 class TestCalculatorEdgeCases:
     """Unit tests for Calculator edge cases, overflow, and invalid inputs."""
