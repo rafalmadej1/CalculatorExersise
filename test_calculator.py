@@ -111,6 +111,7 @@ class TestCalculator:
         ],
     )
     def test_add_parametrized(self, a, b, expected):
+        """Verify addition with parametrized integer and float inputs."""
         calc = Calculator(a, b)
         assert calc.sum() == expected
 
